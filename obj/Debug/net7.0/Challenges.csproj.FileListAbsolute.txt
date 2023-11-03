@@ -1,0 +1,14 @@
+C:\Repos\Challenges\bin\Debug\net7.0\Challenges.exe
+C:\Repos\Challenges\bin\Debug\net7.0\Challenges.deps.json
+C:\Repos\Challenges\bin\Debug\net7.0\Challenges.runtimeconfig.json
+C:\Repos\Challenges\bin\Debug\net7.0\Challenges.dll
+C:\Repos\Challenges\bin\Debug\net7.0\Challenges.pdb
+C:\Repos\Challenges\obj\Debug\net7.0\Challenges.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\Challenges\obj\Debug\net7.0\Challenges.AssemblyInfoInputs.cache
+C:\Repos\Challenges\obj\Debug\net7.0\Challenges.AssemblyInfo.cs
+C:\Repos\Challenges\obj\Debug\net7.0\Challenges.csproj.CoreCompileInputs.cache
+C:\Repos\Challenges\obj\Debug\net7.0\Challenges.dll
+C:\Repos\Challenges\obj\Debug\net7.0\refint\Challenges.dll
+C:\Repos\Challenges\obj\Debug\net7.0\Challenges.pdb
+C:\Repos\Challenges\obj\Debug\net7.0\Challenges.genruntimeconfig.cache
+C:\Repos\Challenges\obj\Debug\net7.0\ref\Challenges.dll
