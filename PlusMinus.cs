@@ -28,10 +28,21 @@ class Result
         //1 -2 -7 9 1 -8 -5
         //var groups= arr.GroupBy(i => Math.Abs(i));
         ///var groups = arr.GroupBy(i => i > 0 ? "1" : i < 0 ? "2" : "3").OrderBy(g => g.Key);
-        var groups = arr.GroupBy(i => i > 0 ? "1" : i < 0 ? "2" : "3").OrderBy(g => g.Key);
-        var result = new List<double>();
-        foreach(var item in groups){
-            Console.WriteLine(((double)item.Count() / arr.Count()).ToString("F6"));
+        var categories = new List<string> {"1", "2", "3"};
+        var result = categories.Select(categorie => new {
+            categorie = categorie,
+            count = arr.Count(num => 
+                (categorie == "1" && num > 0) ||
+                (categorie == "2" && num < 0) ||
+                (categorie == "3" && num == 0)
+                )
+        });
+        //var result = new List<double>();
+        foreach(var item in result){
+            //Console.WriteLine( "{0} {1}", item.Key, item.Count() );
+
+            //result.Add((double)item.Count() / arr.Count());
+            Console.WriteLine(((double)item.count / arr.Count()).ToString("F6"));
         } 
         
     }
