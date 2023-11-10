@@ -32,7 +32,7 @@ class Results
 
 }
 
-class Solution
+class MiniMaxSum
 {
     public static void MainSolution()
     {

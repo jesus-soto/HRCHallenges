@@ -27,7 +27,7 @@ class ResultTimeConversion
         
         try
         {
-            //var result = DateTime.ParseExact(s,"HH:mm:ss",CultureInfo.InvariantCulture);
+            var result = DateTime.ParseExact(s,"hh:mm:sstt",CultureInfo.InvariantCulture).ToString("HH:mm:ss");
             DateTime hour = new DateTime();
             DateTime.TryParseExact(s, "hh:mm:sstt",CultureInfo.InvariantCulture, DateTimeStyles.None, out hour);//result = DateTime.
             //var result = hour.ParseExact(s,"HH:mm:ss",CultureInfo.InvariantCulture);
