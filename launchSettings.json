@@ -1,0 +1,13 @@
+{
+    "profiles": {
+      "MyApp": {
+        "commandName": "Project",
+        "environmentVariables": {
+          "MySettings__ApiKey": "your-custom-api-key",
+          "MySettings__ApiUrl": "https://custom-api.example.com",
+          "OUTPUT_PATH": "C:\\Temp"
+        }
+      }
+    }
+  }
+  

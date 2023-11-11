@@ -13,11 +13,12 @@ class Challenge
         //---------
         //Solution.MainSolution();
         //---------
-        string s = Console.ReadLine();
-        //TimeConversion.timeConversion(s);
-        List<int> arr = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList();
-        //Median(arr);
-        lonelyinteger(arr);
+        // string s = Console.ReadLine();
+        // //TimeConversion.timeConversion(s);
+        // List<int> arr = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList();
+        // //Median(arr);
+        // lonelyinteger(arr);
+        MaincountingSort();
 
     }
 
@@ -54,7 +55,7 @@ class Challenge
                 matrix.Add(Console.ReadLine().TrimEnd().Split(' ').ToList().Select(matrixTemp => Convert.ToInt32(matrixTemp)).ToList());
             }
 
-            int result = Result.flippingMatrix(matrix);
+            int result = flippingMatrix(matrix);
 
             textWriter.WriteLine(result);
         }
@@ -98,6 +99,41 @@ class Challenge
             renglon++;
         } );
         return Math.Abs(sumRight-sumLeft);
+    }
+
+    public static void MaincountingSort()
+    {
+        // TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+        TextWriter textWriter = new StreamWriter(@"Temp.txt", true);
+        int n = Convert.ToInt32(Console.ReadLine().Trim());
+
+        List<int> arr = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList();
+
+        List<int> result = countingSort(arr);
+
+        textWriter.WriteLine(String.Join(" ", result));
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
+
+    public static List<int> countingSort(List<int> arr)
+    {
+        List<int> result = new List<int>();
+        var values = new List<int>();
+        for(int i=0; i<100;i++)
+            values.Add(i);
+        var elements = arr.GroupBy(x => x).Select(grp => new { key = grp.Key, cnt = grp.Count()});
+        //elements.Sort(x => x.key);
+        var results = values.Select( x => new {
+            value = x,
+            cnt = elements.Where(num => num.key == x).Select(w => w.key == x ? w.cnt : 0).FirstOrDefault()
+        });
+        foreach(var element in results){
+           Console.Write(element.cnt); 
+           result.Add(element.cnt);
+        };
+        return result;
     }
 
 }
