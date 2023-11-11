@@ -36,6 +36,32 @@ class Challenge
         var Result = elements.Where(x => x.cnt == 1).First();
         return Result.key;
     }
+
+    public static void MainFlippingMatrix(string[] args)
+    {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        int q = Convert.ToInt32(Console.ReadLine().Trim());
+
+        for (int qItr = 0; qItr < q; qItr++)
+        {
+            int n = Convert.ToInt32(Console.ReadLine().Trim());
+
+            List<List<int>> matrix = new List<List<int>>();
+
+            for (int i = 0; i < 2 * n; i++)
+            {
+                matrix.Add(Console.ReadLine().TrimEnd().Split(' ').ToList().Select(matrixTemp => Convert.ToInt32(matrixTemp)).ToList());
+            }
+
+            int result = Result.flippingMatrix(matrix);
+
+            textWriter.WriteLine(result);
+        }
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
     
     public static int flippingMatrix(List<List<int>> matrix)
     {
@@ -53,6 +79,25 @@ class Challenge
                 result += temp.Max();
             }
         return result;
+    }
+
+    public static int diagonalDifference(List<List<int>> arr)
+    {
+        int leftDiagonal = 0;
+        int rightDiagonal = 0;
+        int tamano = arr.Count;
+        int mitad = tamano / 2;
+        int renglon = 0;
+        int sumRight = 0, sumLeft = 0, iRight = 0;
+        int iLeft = tamano - 1;
+        arr.ForEach( m => {
+            sumRight += m[iRight];
+            sumLeft += m[iLeft];
+            iRight++;
+            iLeft--;
+            renglon++;
+        } );
+        return Math.Abs(sumRight-sumLeft);
     }
 
 }

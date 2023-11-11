@@ -4,7 +4,7 @@ En .NET Core, los decoradores para autorización y autenticación están basados
 
 ### 1. Decorador `Authorize`:
 
-El atributo `Authorize` se utiliza para especificar que solo los usuarios autenticados pueden acceder a un controlador o acción específica. También permite configurar políticas de autorización personalizadas.
+El atributo `Authorize` se utiliza para especificar que solo los usuarios autenticados pueden acceder a un controlador oacción específica. También permite configurar políticas de autorización personalizadas.
 
 **Ejemplo de Uso:**
 
